@@ -7,18 +7,18 @@
         <div class="hero-content">
             <div class="profile-section">
                 <div class="profile-image-container">
-                    <img src="{{ url_for('static', filename='uploads/' + profile.profile_picture) if profile and profile.profile_picture else url_for('static', filename='images/default-avatar.jpg') }}" 
-                         alt="{{ profile.name if profile else 'Your Name' }}" 
-                         class="profile-image">
+                    <img src="{{ url_for('static', filename='uploads/' + profile.profile_picture) if profile and profile.profile_picture else url_for('static', filename='images/default-avatar.jpg') }}"
+                        alt="{{ profile.name if profile else 'Your Name' }}" class="profile-image">
                 </div>
                 <div class="profile-info">
                     <h1 class="profile-name">{{ profile.name if profile else 'Your Name' }}</h1>
                     <h2 class="profile-title">{{ profile.title if profile else 'Your Title' }}</h2>
                     <p class="profile-bio">{{ profile.bio if profile else 'Your bio goes here...' }}</p>
-                    
+
                     <div class="profile-actions">
                         {% if profile and profile.resume %}
-                        <a href="{{ url_for('static', filename='uploads/' + profile.resume) }}" class="btn btn-primary" download>
+                        <a href="{{ url_for('static', filename='uploads/' + profile.resume) }}" class="btn btn-primary"
+                            download>
                             <i class="fas fa-download"></i> Download Resume
                         </a>
                         {% else %}
@@ -27,13 +27,20 @@
                         </a>
                         {% endif %}
                     </div>
-                    
+
                     <div class="social-links-hero">
-                        <a href="#" class="social-link"><i class="fab fa-github"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-link"><i class="fas fa-envelope"></i></a>
+                        <a href="https://github.com/AlkamaHasib" class="social-link"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/abualkamahasib/" class="social-link"><i
+                                class="fab fa-linkedin"></i></a>
+                        <!-- <a href="https://instagram.com/yourusername" class="social-link"><i
+                                class="fab fa-instagram"></i></a> -->
+
+                        <!-- Open default email app with your email -->
+                        <a href="mailto:abualkamahasib1401.com" class="social-link">
+                            <i class="fas fa-envelope"></i>
+                        </a>
                     </div>
+
                 </div>
             </div>
         </div>
@@ -47,8 +54,8 @@
         <div class="about-content">
             <div class="about-text">
                 <p>{{ profile.bio if profile else 'Add your detailed about me information in the admin panel...' }}</p>
-                
-                <div class="personal-info">
+
+                <!-- <div class="personal-info">
                     <div class="info-item">
                         <strong>Email:</strong>
                         <span>{{ profile.email if profile else 'your.email@example.com' }}</span>
@@ -65,9 +72,9 @@
                         <strong>Department:</strong>
                         <span>{{ profile.department if profile else 'Your Department' }}</span>
                     </div>
-                </div>
+                </div> -->
             </div>
-            
+
             <div class="about-stats">
                 <div class="stat-card">
                     <div class="stat-number" data-count="{{ projects|length }}">0</div>
@@ -132,7 +139,7 @@
                 <div class="project-content">
                     <h3>{{ project.title }}</h3>
                     <p class="project-description">{{ project.description }}</p>
-                    
+
                     {% if project.technologies %}
                     <div class="project-technologies">
                         {% for tech in project.technologies.split(',') %}
@@ -140,7 +147,7 @@
                         {% endfor %}
                     </div>
                     {% endif %}
-                    
+
                     <div class="project-links">
                         {% if project.project_url %}
                         <a href="{{ project.project_url }}" target="_blank" class="btn btn-outline">
@@ -176,7 +183,8 @@
                 <div class="timeline-content">
                     <div class="timeline-header">
                         <h3>{{ exp.position }}</h3>
-                        <span class="timeline-date">{{ exp.start_date }} - {{ exp.end_date if exp.end_date else 'Present' }}</span>
+                        <span class="timeline-date">{{ exp.start_date }} - {{ exp.end_date if exp.end_date else
+                            'Present' }}</span>
                     </div>
                     <h4 class="timeline-company">{{ exp.company }}</h4>
                     <p class="timeline-description">{{ exp.description }}</p>
@@ -205,7 +213,8 @@
                 <div class="education-content">
                     <h3>{{ edu.degree }}</h3>
                     <h4>{{ edu.institution }}</h4>
-                    <span class="education-date">{{ edu.start_date }} - {{ edu.end_date if edu.end_date else 'Present' }}</span>
+                    <span class="education-date">{{ edu.start_date }} - {{ edu.end_date if edu.end_date else 'Present'
+                        }}</span>
                     {% if edu.field %}
                     <p class="education-field">{{ edu.field }}</p>
                     {% endif %}
@@ -285,7 +294,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="contact-form">
                 <form id="contactForm">
                     <div class="form-group">
