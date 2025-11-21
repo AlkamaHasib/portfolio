@@ -99,16 +99,6 @@ portfolio/
    ```bash
    python app.py
    ```
-
-5. **Access the portfolio**
-   - Portfolio: http://localhost:5000
-   - Admin Login: http://localhost:5000/admin/login
-   - Default credentials:
-     - Username: `admin`
-     - Password: `admin123`
-
-**⚠️ Important**: Change the default password immediately after first login!
-
 ## Configuration
 
 Edit `config.py` to customize:
